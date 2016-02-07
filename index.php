@@ -2,7 +2,7 @@
 <head>
 	<title>Magic Mirror</title>
 	<style type="text/css">
-		<?include('css/main.css');?>
+		<?php include('css/main.css') ?>
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/weather-icons.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
@@ -16,10 +16,10 @@
 
 	<div class="top right"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div>
 	
-	<div class="top left">
+ 	<div class="top left">
 		<div class="date small dimmed"></div>
 		<div class="time" id="time"></div>
-		<div class="xxsmall">
+<!--		<div class="xxsmall">
 			<?php
 			require('controllers/functions/trains.php');
 			$results = GetTrains("BCF");
@@ -29,17 +29,18 @@
 			}
 		  	?>
 		</div>
-		<br>
-	</div>
+		<br>-->
+	</div> 
 	<div class="center-ver center-hor"><!-- <div class="dishwasher light">Vaatwasser is klaar!</div> --></div>
 	<div class="lower-third center-hor"><div class="compliment light"></div></div>
 	<div class="bottom center-hor"><div class="news medium"></div></div>
 	<!--<div class="bottom right"><div style="width:260px"><script language="JavaScript" src="http://www.tfl.gov.uk/tfl/syndication/widgets/serviceboard/embeddable/serviceboard-iframe-stretchy.js"></script></div>-->
-	<div class="top center-hor"><iframe id="tieatie" style=visibility:hidden; width="560" height="315" src="https://www.youtube.com/embed/T0NPYZyI7V8" frameborder="0" allowfullscreen></iframe></div>
+	<!-- <div class="top center-hor"><iframe id="tieatie" style=visibility:hidden; width="560" height="315" src="https://www.youtube.com/embed/T0NPYZyI7V8" frameborder="0" allowfullscreen></iframe></div>
 	<div class="top center-hor"><iframe id="music" style=visibility:hidden; width="560" height="315" src="https://www.youtube.com/embed/nj1fwTkBL8Q" frameborder="0" allowfullscreen></iframe>
+ -->
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
 <script>
     var annyangScript = document.createElement('script');
@@ -116,7 +117,7 @@
       $('#unsupported').fadeIn('fast');
     });
   }
-  </script>
+  </script>-->
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery.feedToJSON.js"></script>
@@ -133,6 +134,6 @@
 <script src="js/main.js?nocache=<?php echo md5(microtime()) ?>"></script>
 <!-- <script src="js/socket.io.min.js"></script>  	<div class="bottom left"><?php include('php/trains.php'); ?></div> -->
 
-<?include(dirname(__FILE__).'/controllers/modules.php');?>
+<?php include(dirname(__FILE__).'/controllers/modules.php') ?>
 </body>
 </html>
