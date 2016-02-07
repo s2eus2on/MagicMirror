@@ -141,7 +141,8 @@ weather.updateWeatherForecast = function () {
 				_forecastHtml3 += '<td style="opacity:' + _opacity + '" class="temp-max">' + this.roundValue(_forecast.temp.max) + '</td>';
 				_forecastHtml4 += '<td style="opacity:' + _opacity + '" class="temp-min">' + this.roundValue(_forecast.temp.min) + '</td>';
 
-				_opacity -= 0.155;
+				// _opacity -= 0.155;
+				_opacity -= 0;
 
 				if (this.orientation == 'vertical') {
 					_forecastHtml += _forecastHtml2 + _forecastHtml3 + _forecastHtml4 + '</tr>';

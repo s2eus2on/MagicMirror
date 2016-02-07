@@ -103,11 +103,11 @@ html {
 }
 
 .xdimmed {
-  color: #666;
+  color: #fff;
 }
 
 .dimmed {
-  color: #aaa;
+  color: #fff;
 }
 
 .light {
@@ -135,7 +135,7 @@ html {
 
 .time .sec {
   font-size: 25px;
-  color: #666;
+  color: #fff;
   padding-left: 5px;
   position: relative;
   top: -35px;
@@ -160,7 +160,7 @@ html {
 }
 
 .forecast-table .day {
-  color: #999;
+  color: #fff;
 }
 
 .calendar-table {
