@@ -13,7 +13,7 @@
 			foreach ($response->GetStationBoardResult->trainServices->service as $value)
 			{
 			  	$result = "";
-			  	$destination_location_name = $value->origin->location->locationName;
+			  	$destination_location_name = $value->destination->location->locationName;
 			  	$std = $value->std;
 			  	$etd = $value->etd;
 			  	if ($destination_location_name == "London Marylebone")
