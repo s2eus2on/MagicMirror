@@ -191,6 +191,21 @@ html {
   display: none;
 }
 
+
+.scroller {
+    overflow: hidden;
+    /*position: relative*/
+}
+#scroller {
+    width: 10000px;
+    position: absolute;
+    bottom: -40;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
 @font-face {
   font-family: 'HelveticaNeue-UltraLight';
   src: url('font/HelveticaNeue-UltraLight.eot');

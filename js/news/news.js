@@ -11,8 +11,8 @@ var news = {
 	_cacheBuster: Math.floor((new Date().getTime()) / 1200 / 1000),
 	_failedAttempts: 0,
 	fetchInterval: config.news.fetchInterval || 60000,
-	updateInterval: config.news.interval || 5500,
-	fadeInterval: 2000,
+	updateInterval: config.news.interval || 0,
+	fadeInterval: config.news.fadeInterval || 0,
 	intervalId: null,
 	fetchNewsIntervalId: null
 }
@@ -89,8 +89,10 @@ news.parseFeed = function (data) {
 
 	this.newsItems = this.newsItems.concat(_rssItems);
 
-	return true;
+	this.newsItemsString  = this.newsItems.join("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+	console.debug(this.newsItemsString);
 
+	return true;
 }
 
 /**
@@ -101,28 +103,30 @@ news.parseFeed = function (data) {
 news.showNews = function () {
 
 	// If all items have been seen, swap seen to unseen
-	if (this.newsItems.length === 0 && this.seenNewsItem.length !== 0) {
+	// if (this.newsItems.length === 0 && this.seenNewsItem.length !== 0) {
 
-		if (this._failedAttempts === 20) {
-			console.error('Failed to show a news story 20 times, stopping any attempts');
-			return false;
-		}
+	// 	if (this._failedAttempts === 20) {
+	// 		console.error('Failed to show a news story 20 times, stopping any attempts');
+	// 		return false;
+	// 	}
 
-		this._failedAttempts++;
+	// 	this._failedAttempts++;
 
-		setTimeout(function () {
-			this.showNews();
-		}.bind(this), 3000);
+	// 	setTimeout(function () {
+	// 		this.showNews();
+	// 	}.bind(this), 3000);
 
-	} else if (this.newsItems.length === 0 && this.seenNewsItem.length !== 0) {
-		this.newsItems = this.seenNewsItem.splice(0);
-	}
+	// } else if (this.newsItems.length === 0 && this.seenNewsItem.length !== 0) {
+	// 	this.newsItems = this.seenNewsItem.splice(0);
+	// }
 
-	var _location = Math.floor(Math.random() * this.newsItems.length);
+	// var _location = Math.floor(Math.random() * this.newsItems.length);
 
-	var _item = news.newsItems.splice(_location, 1)[0];
+	// var _item = news.newsItems.splice(_location, 1)[0];
 
-	this.seenNewsItem.push(_item);
+	var _item = this.newsItemsString;
+
+	// this.seenNewsItem.push(_item);
 
 	$(this.newsLocation).updateWithText(_item, this.fadeInterval);
 
@@ -139,6 +143,9 @@ news.init = function () {
 	}
 
 	this.fetchNews();
+	//this.parseFeed();
+	
+	
 	this.showNews();
 
 	this.fetchNewsIntervalId = setInterval(function () {
