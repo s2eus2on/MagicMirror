@@ -15,6 +15,7 @@
 <body>
 
 	<div class="top right"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div>
+  <!-- <div class="top center-hor"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div> -->
 	
  	<div class="top left">
 		<div class="date small dimmed"></div>
@@ -40,7 +41,7 @@
   </div>
 
 	<!-- <div class="bottom right"><div style="width:260px"><script language="JavaScript" src="http://ww12w.tfl.gov.uk/tfl/syndication/widgets/serviceboard/embeddable/serviceboard-iframe-stretchy.js"></script></div> -->
-	<!-- <div class="top center-hor"><iframe id="tieatie" style=visibility:hidden; width="560" height="315" src="https://www.youtube.com/embed/T0NPYZyI7V8" frameborder="0" allowfullscreen></iframe></div> -->
+	<div class="top center-hor"><iframe id="tieatie" style=visibility:hidden; width="560" height="315" src="https://www.youtube.com/embed/T0NPYZyI7V8" frameborder="0" allowfullscreen></iframe></div>
 	<div class="top center-hor"><iframe id="music" style=visibility:hidden; width="560" height="315" src="https://www.youtube.com/embed/nj1fwTkBL8Q" frameborder="0" allowfullscreen></iframe>
 
 </div>
@@ -68,19 +69,19 @@
         $scope.focus = "sleep";
     };
 
-    // var tie_a_tie = function() {
-    // 	console.debug("tie a tie");
-    // 	var iframe = document.getElementById("tieatie");  
-    // 	iframe.style.visibility="visible";
-    // 	iframe.src = iframe.src + "?autoplay=1";
-    // };
+    var tie_a_tie = function() {
+    	console.debug("tie a tie");
+    	var iframe = document.getElementById("tieatie");  
+    	iframe.style.visibility="visible";
+    	iframe.src = iframe.src + "?autoplay=1";
+    };
 
-    // var remove_tie_a_tie = function() {
-    // 	console.debug("remove video tie a tie");
-    // 	var iframe = document.getElementById("tieatie");  
-    // 	iframe.style.visibility="hidden";
-    // 	iframe.src = "";
-    // };
+    var remove_tie_a_tie = function() {
+    	console.debug("remove video tie a tie");
+    	var iframe = document.getElementById("tieatie");  
+    	iframe.style.visibility="hidden";
+    	iframe.src = "";
+    };
 
     var play_music = function(){
     	console.debug("Play music");
@@ -102,8 +103,8 @@
     var commands = {
       'hello (there)':        hello,
       'stop': stop,
-      // 'show video': tie_a_tie,
-      // 'remove video' : remove_tie_a_tie,
+      'show video': tie_a_tie,
+      'remove video' : remove_tie_a_tie,
       'play music' : play_music,
       'stop music' : stop_music
     };
